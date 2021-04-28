@@ -1,0 +1,95 @@
+<div #EHRUserDashboard id-="EHRUserDashboard" class="BackGroundClass" style="background: white;">
+    <header>
+      <div id="slide-out" class="side-nav fixed" [hidden]="eHRUserDashboardMenuShowHide">
+        <ul class="custom-scrollbar" style=" list-style: none;">
+          <!-- Logo -->
+          <li style="border-bottom: 1px solid #cccccc14">
+            <div class="logo-wrapper waves-light waves-effect waves-light"
+              style="text-align: center;background: #193048 !important;">
+              <div class="sidenav-header-inner text-center">
+                <div class="row visible-xs visible-sm">
+                  <div class="col-xs-12" style="margin-right:19px;font-size:24px;float:right;margin-top:5px">
+                    <button (click)="closeInMobile()"
+                      style="background-color:transparent;color:white;font-size:28px;font-weight:bold;border:none;"
+                      class="w3-bar-item w3-large">
+                      ×</button>
+                  </div>
+                </div>
+                <span class="k-icon k-i-user" style="cursor:pointer;color:white;font-size: 60px;margin-top: 16px;">
+                </span>
+                <i class="fa fa-chevron-circle-left hidden-sm hidden-xs" style="float: right;margin-left: -28px;
+                padding-right: 3px;margin-top: 17px;color: white;font-size: 21px;"
+                  [hidden]="eHRUserDashboardMenuCollapseShowHide" title="Collapse"
+                  (click)="eHRUserDashboardMenuCollapseClick();"></i>
+                <h2 class="h5" title="{{userFirstAndLastName}}" style="color: white !important;padding: 10px;"
+                  title="{{userFirstAndLastName}}">{{ userFirstAndLastName }}</h2>
+              </div>
+            </div>
+          </li>
+  
+          <li class="leftSideFoldersHeightClasss">
+            <div class="list-group" #sidebar>
+              <!-- <a id="menulist" class="list-group-item list-group-item-action" *ngFor="let leftnavitem of LeftSideFoldersListNew"
+                style="color: white !important;border: 1px solid #cccccc40;padding: 10px 0px 10px 40px;"
+                (click)="OnListClick(leftnavitem.ITS_LeftFolder_Item_InfoID,$event)" submenuli>
+              </a> -->
+              <a class="list-group-item list-group-item-action" id="ehrUserDashboardTicketInformationItem"
+                style="color: white !important;border: 1px solid #cccccc40;" (click)="TicketInformationClick()" submenuli>
+                <span style="margin-left: -14px;padding-bottom: 21px;padding-right: 15px;">
+                  <span class="fa fa-tasks" style="font-size: 20px;vertical-align: sub;"></span>
+                </span>
+                <span>
+                  Ticket Information
+                </span>
+              </a>
+            </div>
+          </li>
+          <!--/. Side navigation links -->
+        </ul>
+      </div>
+  
+      <!--Nav Bar Block Start-->
+      <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav"
+        style="background: #193048">
+        <i class="fa fa-chevron-circle-right hidden-sm hidden-xs eHRUserDashboardMenuExpandStyleClass"
+          style="color: white;font-size: 21px; padding-right: 5px;" title="Expand"
+          (click)="eHRUserDashboardMenuExpandClick();"></i>
+        <div class="menu-btn visible-sm visible-xs" (click)="eHRUserDashboardMobileMenuClick();">
+          <a title="">
+            <i class="fa fa-bars" style="color:white;font-size: 24px;margin-left:15px;cursor: pointer;"></i>
+          </a>
+        </div>
+  
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+          <li class="nav-item">
+            <a class="hidden-xs hidden-sm dropbtns"
+              style="color: white !important;cursor: pointer;padding-right:10px;vertical-align: middle;padding-left: 2px;text-decoration: none;"
+              title="{{ userFirstAndLastName }}" (click)="myFunctionClick();"> {{ userFirstAndLastName }} </a>
+            <div class="dropdown hidden-xs hidden-sm">
+              <button class="dropbtn">
+                <i class="k-icon k-i-user UserIconStylesInMobile" style="font-size: 20px;"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="javascript:void(0);" (click)="ReturnToHomePage()">Logout</a>
+              </div>
+            </div>
+            <div class="dropdown visible-xs visible-sm">
+              <button class="dropbtn dropdown-toggle DropdownToggleMarginTopClassInMobile" type="button"
+                data-toggle="dropdown">
+                <i class="k-icon k-i-user UserIconStylesInMobile" style="font-size: 20px;"></i>
+              </button>
+              <ul class="dropdown-menu DropdownMobileClass">
+                <li><a href="javascript:void(0);" (click)="ReturnToHomePage()">Logout</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!--Nav Bar Block End-->
+    </header>
+    <!-- <main [ngClass]="(eHRUserDashboardMenuShowHide==true)?'eHRUserDashboardStyleClass':''">
+      <router-outlet name="main"></router-outlet>
+    </main> -->
+  
+    <ng-container #container></ng-container>
+  </div>

@@ -1,0 +1,595 @@
+.side-nav {
+    background-color: #24879d;
+}
+
+.side-nav.fixed {
+    left: 0;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    position: fixed;
+
+}
+
+
+.side-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    height: 100%;
+    background: #193048 !important;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1040;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    will-change: transform;
+    backface-visibility: hidden;
+    padding: 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    width: 260px;
+}
+
+/* @media (max-height: 992px) {
+    .side-nav .logo-wrapper,
+    .side-nav .logo-wrapper a {
+        height: 146px;
+    }
+} */
+
+.custom-scrollbar {
+    padding-left: 0px;
+    /* text-align: center; */
+}
+
+.fixed-sn .double-nav,
+.fixed-sn footer,
+.fixed-sn main {
+    padding-left: 15rem;
+}
+
+.cyan-skin .navbar {
+    background-color: #114861;
+    color: #fff;
+}
+
+@media (min-width: 600px) {
+    .navbar.scrolling-navbar {
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -o-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+.navbar {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    font-weight: 300;
+}
+
+.navbar,
+.pagination .page-item.active .page-link {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.fixed-top {
+    top: 0;
+}
+
+.fixed-bottom,
+.fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg {
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 50px;
+    /* border: 1px solid white; */
+    background: #193048 !important
+}
+
+.nav-link,
+.navbar {
+    padding: .5rem 1rem;
+}
+
+@media(min-width:1700px) {
+    .side-nav.fixed {
+        width: 13%;
+    }
+    .eHRUserDashboardMenuCollapseStyleClass{
+        color: white;
+        font-size: 25px;
+        padding-left: 13pc;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .fixed-sn .page-footer .container-fluid,
+    .fixed-sn main {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .fixed-sn .page-footer .container-fluid,
+    .fixed-sn main {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (min-width: 600px) {
+
+    .fixed-sn .page-footer .container-fluid,
+    .fixed-sn main {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+
+.fixed-sn .double-nav,
+.fixed-sn footer,
+.fixed-sn main {
+    padding-left: 15rem;
+}
+
+.fixed-sn main,
+.hidden-sn main {
+    padding-top: 5.5rem;
+}
+
+main {
+    margin-left: 5%;
+    margin-right: 2rem;
+    padding-left: 11rem;
+    padding-top: 1rem;
+    background: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@media(min-width:1710px) {
+    main {
+        min-height: 893px;
+    }
+}
+@media(min-width:1610px) and (max-width:1710px) {
+    main {
+        min-height: 786px;
+    }
+}
+
+@media(min-width:1500px) and (max-width:1590px) {
+    main {
+        min-height: 702px !important;
+    }
+}
+@media(min-width:1400px) and (max-width:1500px) {
+    main {
+        height: 850px !important;
+        margin-left: 7%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+    }
+}
+@media(min-width:1590px) and (max-width:1610px) {
+    main {
+        height: 850px !important;
+        margin-left: 7%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+    }
+}
+
+@media(min-width:1300px) and (max-width:1400px) {
+    main {
+        height: 845px !important;
+        margin-left: 7%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+    }
+}
+
+@media(min-width:1200px) and (max-width:1300px) {
+    main {
+        height: 968px !important;
+        margin-left: 7%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+    }
+    .OASAppplicationLabelMarginClass {
+        margin-left: 26% !important;
+    }.eHRUserDashboardMenuCollapseStyleClass{
+        color: white;
+        font-size: 25px;
+        padding-left: 14.5pc;
+    }
+
+}
+
+@media(min-width:1100px) and (max-width:1200px) {
+    main {
+        height: 802px !important;
+        margin-left: 10%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+    }
+    .OASAppplicationLabelMarginClass {
+        margin-left: 23% !important;
+    }.eHRUserDashboardMenuCollapseStyleClass{
+        color: white;
+        font-size: 25px;
+        padding-left: 14.5pc;
+    }
+    .leftSideFoldersHeightClasss{
+        height: 612px; 
+        overflow: hidden auto;
+    }
+}
+
+@media(min-width:1000px) and (max-width:1100px) {
+    main {
+        height: 715px !important;
+        margin-left: 10%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+    }
+    .OASAppplicationLabelMarginClass {
+        margin-left: 20% !important;
+    }.eHRUserDashboardMenuCollapseStyleClass{
+        color: white;
+        font-size: 25px;
+        padding-left: 14.5pc;
+    }
+    .leftSideFoldersHeightClasss{
+        height: 625px; 
+        overflow: hidden auto;
+    }
+}
+
+@media(min-width:700px) and (max-width:1000px) {
+    main {
+        height: 925px !important;
+        margin-left: 5%;
+        margin-right: 2rem;
+        padding-top: 1rem;
+        background: white;
+        padding-left: 0rem !important;
+    }
+}
+
+@media(min-width:600px) and (max-width:700px) {
+    main {
+        height: 522px !important;
+        margin-left: 5%;
+        margin-right: 2rem;
+        padding-top: 1rem;
+        background: white;
+        padding-left: 0rem !important;
+    }
+}
+
+@media(min-width:100px) and (max-width:600px) {
+    main {
+        height: 728px !important;
+        margin-left: 5%;
+        margin-right: 2rem;
+        padding-top: 1rem;
+        background: white;
+        padding-left: 0rem !important;
+    }
+}
+
+@media(min-width:600px) and (max-width:700px) {
+    #slide-out {
+        min-height: 346px;
+        overflow-y: auto;
+    }
+}
+
+.list-group-item {
+    cursor: pointer;
+    border-color: #193048;
+    background: #193048 !important;
+}
+
+.active {
+    background: #2ca01c !important;
+}
+
+.removeactive {
+    background: transparent;
+}
+
+/* @media(max-width:1000px){
+    .side-nav fixed{
+        display: none;
+    }
+} */
+
+@media(min-width:1000px) and (max-width:1700px) {
+    .OASAppplicationLabelMarginClass {
+        margin-left: 34%;
+        font-size: 25px;
+    }
+}
+
+@media(max-width:1000px) {
+    .OASAppplicationLabelMarginClass {
+        font-size: 20px;
+    }
+
+    .nav-item {
+        margin-top: -10px;
+    }
+
+    .ml-auto {
+        text-align: right;
+        float: right;
+    }
+
+    .UserIconStylesInMobile {
+        margin-top: 24px;
+    }
+}
+
+.show {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+@media(min-width:700px) and (max-width:1000px) {
+    .dropdown-content {
+        margin-left: -17%;
+    }
+}
+
+@media(max-width:700px) {
+    .dropdown-content {
+        margin-left: -28%;
+    }
+}
+
+
+
+.dropbtn {
+    background-color: #193048;
+    /* #193048 ;*/
+    color: white;
+    /* padding: 0px 8px; */
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media(min-width:1400px) and (max-width:1500px) and (min-height:1000px) and (max-height:1100px) {
+    main {
+        height: 961px !important;
+    }
+}
+@media(min-width:1500px) and (max-width:1700px){
+    main {
+        /* margin-left: 4%; */
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+@media(min-width:1300px) and (max-width:1500px){
+    main {
+        margin-left: 7%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .eHRUserDashboardMenuCollapseStyleClass{
+        color: white;
+        font-size: 25px;
+        padding-left: 15pc;
+    }
+    .OASAppplicationLabelMarginClass {
+        margin-left: 29% !important;
+    }
+    .leftSideFoldersHeightClasss{
+        height: 520px; 
+        overflow: hidden auto;
+    }
+}
+@media(min-width:1000px) and (max-width:1300px){
+    main {
+        margin-left: 9%;
+        margin-right: 2rem;
+        padding-left: 11rem;
+        padding-top: 1rem;
+        background: white;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+/* @media(min-width:1400px) and (max-width:1500px) {
+    main {
+        height: 808px; 
+    }
+} */
+
+/* .dropdown:hover .dropbtn {
+    background-color: #007bff;
+} */
+
+@media(min-width:1500px) and (max-width:1600px) {
+    .side-nav.fixed {
+        width: 15%;
+    }
+}
+@media(min-width:1500px) and (max-width:1610px){
+    main {
+        margin-left: 5%;
+    }
+    .eHRUserDashboardMenuCollapseStyleClass{
+        color: white;
+        font-size: 25px;
+        padding-left: 13pc;
+    }
+    .leftSideFoldersHeightClasss{
+        height: 622px; 
+        overflow: hidden auto;
+    }
+}
+
+@media(min-width:1680px) and (max-width:1710px){
+    main {
+        margin-left: 4% !important;
+    }
+}
+@media(min-width:1610px) and (max-width:1680px){
+    main {
+        margin-left: 4.5%;
+
+    }
+    .eHRUserDashboardMenuCollapseStyleClass{
+        color: white;
+        font-size: 25px;
+        padding-left: 13pc;
+    }
+  
+}
+@media(min-width:1000px) and (max-width:1680px){
+.OASAppplicationLabelMarginClassWhenCollapsedStyleClass{
+    margin-left: 44% !important;
+}
+}
+.eHRUserDashboardStyleClass{
+padding-left: 0px !important;
+margin-left: 2% !important;
+}
+@media(min-width:1610px) and (max-width:1700px){
+.side-nav.fixed {
+    width: 13% !important;
+}
+}
+
+a i.fa-chevron-down {
+    position: absolute;
+    margin-left: 10pc;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.leftSideFoldersHeightClasss{
+    height:calc(100vh - 101px) !important;
+    overflow: hidden auto;
+}
+
+@media(min-width:1680px)and(max-width:1700px) {
+    .side-nav.fixed {
+        width: 14%;
+    }
+
+.leftSideFoldersHeightClasss {
+    height:calc(100vh - 100px) !important;
+
+}
+main {
+    height:calc(100vh - 50px)!important;
+}
+
+}
+@media(max-width:700px) {
+    .nav-item {
+        margin-top: -33px !important;
+    }
+}

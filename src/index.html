@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EHRYourWaySupport</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@progress/kendo-theme-bootstrap@latest/dist/all.css"
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/node_modules/ng-busy/src/style/busy.css">
+  <!-- <script src="/node_modules/quill-image-drop-and-paste/quill-image-drop-and-paste.min.js"></script> -->
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+<script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+  <style>
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    .busyLoading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 999999999;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .busyLoading-holder {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      z-index: 999999999;
+      display: none;
+    }
+
+    @media(min-width:700px) and (max-width:1000px) {
+      .visible-sm {
+        display: block !important;
+      }
+
+      .hidden-sm {
+        display: none !important;
+      }
+    }
+    @media(max-width:700px) {
+      .visible-xs {
+        display: block !important;
+      }
+
+      .hidden-xs {
+        display: none !important
+      }
+    }
+
+    @media(min-width:1000px) {
+      .visible-xs {
+        display: none !important;
+      }
+
+      .main-buttons-item-text-title {
+        padding-right: 14px;
+      }
+      .visible-sm {
+        display: none !important;
+      }
+    }
+
+    @media(min-width:700px) {
+      .ParticipantsPaddingClassInMobile {
+        padding-left: 0px;
+      }
+    }
+
+    @media(max-width:1000px) {
+      .main-buttons-item-text-title {
+        padding-right: 14px;
+      }
+    }
+
+    @media(min-width:1610px) {
+      .BusyLoadingHeightClass {
+        height: 968px;
+      }
+    }
+
+    @media(min-width:300px) and (max-width:700px) {
+      .BusyLoadingHeightClass {
+        height: 800px;
+      }
+    }
+
+    @media(min-width:1700px) {
+      .ag-theme-balham {
+        height: 700px;
+      }
+
+
+      #CreateTaskInfo {
+        max-height: 700px;
+      }
+      .WorkareaContentWidthClass {
+        flex: 0 0 79%;
+        max-width: 74%;
+      }
+
+      .YetToStartWidthClass {
+        flex: 1 0 19.666667%;
+        max-width: 25.666667%;
+      }
+    }
+
+    @media(min-width:1500px) and (max-width:1700px) {
+      .WorkareaContentWidthClass {
+        flex: 0 0 79%;
+        max-width: 75%;
+      }
+
+      .YetToStartWidthClass {
+        flex: 0 0 21.666667%;
+        max-width: 21.666667%;
+        height: 605px !important;
+      }
+    }
+
+    @media(min-width:1400px) and (max-width:1500px) {
+
+      .WorkareaContentWidthClass {
+        flex: 0 0 73%;
+        max-width: 73%;
+      }
+
+      .YetToStartWidthClass {
+        flex: 0 0 23.666667%;
+        max-width: 23.666667%;
+      }
+    }
+
+    @media(min-width:1610px) and (max-width:1700px) {
+      .ag-theme-balham {
+        height: 701px;
+      }
+
+      #CreateTaskInfo {
+        max-height: 716px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        max-height: 863px !important;
+      }
+    }
+
+    @media(min-width:1400px) and (max-width:1610px) {
+      .ag-theme-balham {
+        height: 592px;
+      }
+
+      #CreateTaskInfo {
+        max-height: 606px !important;
+      }
+    }
+
+    @media(min-width:1300px) and (max-width:1400px) {
+      .WorkareaContentWidthClass {
+        flex: 0 0 72%;
+        max-width: 72%;
+      }
+
+      .YetToStartWidthClass {
+        flex: 0 0 23.666667%;
+        max-width: 23.666667%;
+      }
+
+      .ag-theme-balham {
+        height: 452px;
+      }
+
+      #CreateTaskInfo {
+        max-height: 450px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        height: 628px !important;
+      }
+    }
+
+    @media(min-width:1200px) and (max-width:1300px) {
+      .WorkareaContentWidthClass {
+        flex: 0 0 71%;
+        max-width: 69%;
+      }
+
+      .YetToStartWidthClass {
+        flex: 0 0 26.666667%;
+        max-width: 26.666667%;
+      }
+
+      .ag-theme-balham {
+        height: 525px;
+      }
+
+      #CreateTaskInfo {
+        max-height: 704px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        height: 629px !important;
+      }
+    }
+
+    @media(min-width:1100px) and (max-width:1200px) {
+
+      .ag-theme-balham {
+        height: 374px;
+      }
+
+      #CreateTaskInfo {
+        max-height: 560px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        height: 635px !important;
+        left: 6%;
+      }
+
+      #workarea {
+        margin-left: 10px;
+      }
+
+      .YetToStartWidthClass {
+        margin-left: 0px !important;
+      }
+
+    }
+
+    @media(min-width:1000px) and (max-width:1100px) {
+
+      .ag-theme-balham {
+        height: 345px !important;
+      }
+
+      #CreateTaskInfo {
+        max-height: 451px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        height: 627px !important;
+        left: 3%;
+      }
+
+      #workarea {
+        margin-left: 10px;
+      }
+
+      .YetToStartWidthClass {
+        margin-left: 0px !important;
+      }
+    }
+
+    @media(min-width:700px) and (max-width:1000px) {
+      .ag-theme-balham {
+        height: 360px;
+      }
+
+      #CreateTaskInfo {
+        max-height: 705px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        height: 682px !important;
+        max-width: 650px !important;
+        top: -7%;
+      }
+
+      .YetToStartWidthClass {
+        margin-left: 5px !important;
+        flex: 0 0 97.666667%;
+        max-width: 100.666667%;
+      }
+
+      .WorkareaContentWidthClass {
+        flex: 0 0 98%;
+        max-width: 98%;
+        margin-left: 3px !important;
+      }
+    }
+
+    @media(min-width:600px) and (max-width:700px) {
+      .ag-theme-balham {
+        height: 397px !important;
+      }
+
+      #CreateTaskInfo {
+        max-height: 396px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        height: 368px !important;
+        max-width: 596px !important;
+        top: 6%;
+      }
+
+      .YetToStartWidthClass {
+        margin-left: 5px !important;
+        flex: 0 0 97.666667%;
+        max-width: 100.666667%;
+      }
+
+      .WorkareaContentWidthClass {
+        flex: 0 0 98%;
+        max-width: 98%;
+        margin-left: 3px !important;
+      }
+    }
+
+    @media(min-width:100px) and (max-width:600px) {
+      .ag-theme-balham {
+        height: 397px;
+      }
+
+      #CreateTaskInfo {
+        max-height: 464px !important;
+      }
+
+      .k-dialog-wrapper .k-dialog {
+        height: 627px !important;
+        max-width: 328px !important;
+      }
+
+      .YetToStartWidthClass {
+        margin-left: 5px !important;
+        flex: 0 0 95.666667%;
+        max-width: 98.666667%;
+      }
+
+      .WorkareaContentWidthClass {
+        flex: 0 0 97%;
+        max-width: 97%;
+        margin-left: 3px !important;
+      }
+    }
+
+    @media(max-width:600px) {
+      .TaskInfoHeaderClass {
+        font-size: 20px;
+        white-space: nowrap;
+      }
+
+      .EdiTaskSaveWidthClass {
+        width: 100%;
+      }
+
+      kendofileselect {
+        width: 100%;
+      }
+
+      .DropdownToggleMarginTopClassInMobile {
+        margin-top: 39px !important;
+      }
+
+      .UserIconStylesInMobile {
+        margin-top: 0px !important;
+      }
+    }
+
+    @media(min-width:600px) {
+      .EdiTaskSaveWidthClass {
+        width: 100px;
+      }
+
+      .ViewTaskInfoButtonClass {
+        float: right;
+      }
+
+
+    }
+
+    .ql-editor {
+      height: 235px;
+    }
+
+    .form-group {
+      margin-bottom: 8px !important;
+    }
+
+    .ag-theme-balham .ag-header-cell {
+      background-color: #0069d9 !important;
+    }
+
+    .popup-header {
+      min-height: 16.42857143px;
+      padding: 15px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+      background-color: #0072C5;
+      border: 0px;
+    }
+
+    ModalPopupHeadings {
+      font-size: 17px;
+      padding-top: 15px;
+      color: white;
+      font-weight: normal;
+      margin-bottom: 5px;
+      font-size: 17px;
+    }
+
+    .k-window-titlebar {
+      border-color: rgba(33, 37, 41, .125);
+      color: #212529;
+      background-color: #fff;
+      padding: 1em;
+    }
+
+    .k-tabstrip-top>.k-tabstrip-items .k-item {
+      width: auto !important;
+    }
+
+    @media(min-width:1200px) {
+      .main-buttons-item {
+        position: relative;
+        display: inline-block;
+        margin: 0 50px 8px 0;
+        height: 60px;
+        line-height: 30px;
+        text-decoration: none;
+      }
+    }
+
+    @media(min-width:1000px) and (max-width:1200px) {
+      .main-buttons-item {
+        position: relative;
+        display: inline-block;
+        margin: 0 10px 8px 0;
+        height: 37px !important;
+        line-height: 30px;
+        text-decoration: none;
+      }
+    }
+
+    @media(min-width:600px) and (max-width:1000px) {
+      .main-buttons-item {
+        position: relative;
+        display: inline-block;
+        margin: 0 10px 8px 0;
+        height: 37px !important;
+        line-height: 30px;
+        text-decoration: none;
+      }
+    }
+
+    @media(max-width:600px) {
+      .main-buttons-inner-container {
+        max-height: 206px !important;
+      }
+
+      .ag-theme-balham {
+        height: 381px !important;
+      }
+
+      .main-buttons-item {
+        position: relative;
+        display: inline-block;
+        margin: 0 6px 8px 0;
+        height: 37px !important;
+        line-height: 30px;
+        text-decoration: none;
+      }
+
+      .ViewTaskStyleInMobileClass {
+        text-align: left !important;
+      }
+
+      .k-tabstrip>.k-tabstrip-items {
+        border: 0 solid transparent;
+        display: inline-block !important;
+        flex-direction: row;
+        flex: 0 0 auto;
+        position: relative;
+      }
+    }
+
+    .main-buttons-item-link {
+      position: relative;
+      display: inline-block;
+      height: 65px;
+      font: 15px/65px "OpenSans-Semibold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+      color: #545c6a;
+      outline: 0;
+      text-decoration: none;
+      -webkit-transition: color .3s ease;
+      transition: color .3s ease;
+      vertical-align: middle;
+      box-sizing: border-box;
+      cursor: pointer;
+      -khtml-user-drag: none;
+      -webkit-user-drag: none;
+      text-transform: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .main-buttons-item .main-buttons-item-text {
+      position: relative;
+    }
+
+    .main-buttons-item-edit-button,
+    .main-buttons-item-drag-button {
+      position: absolute;
+      display: inline-block;
+      width: 16px;
+      height: 18px;
+      right: -15px;
+      top: 2px;
+      pointer-events: none;
+      opacity: 0;
+      cursor: pointer;
+      -webkit-transition: opacity 200ms;
+      -moz-transition: opacity 200ms;
+      -ms-transition: opacity 200ms;
+      -o-transition: opacity 200ms;
+      transition: opacity 200ms;
+    }
+
+    main-buttons-item-link {
+      position: relative;
+      display: inline-block;
+      height: 65px;
+      font: 15px/65px "OpenSans-Semibold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+      color: #545c6a;
+      outline: 0;
+      text-decoration: none;
+      -webkit-transition: color .3s ease;
+      transition: color .3s ease;
+      vertical-align: middle;
+      box-sizing: border-box;
+      cursor: pointer;
+      -khtml-user-drag: none;
+      -webkit-user-drag: none;
+      text-transform: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .main-buttons-item-link {
+      font: 15px/65px "OpenSans-Semibold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+      color: #545c6a;
+      text-transform: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .main-buttons-item-drag-button {
+      left: -15px;
+      top: 3px;
+      right: auto;
+      cursor: move;
+    }
+
+    .main-buttons-item-link {
+      font: 15px/65px "OpenSans-Semibold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+      color: #545c6a;
+      cursor: pointer;
+      text-transform: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .main-buttons-item .main-buttons-item-counter {
+      position: absolute;
+      top: 8px;
+      right: -20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding: 0 7px;
+      min-width: 12px;
+      border-radius: 30px;
+      background: #f54819;
+      font: bold 11px/16px "OpenSans-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+
+    .main-buttons-item-link {
+      color: #545c6a !important;
+      text-decoration: none !important;
+
+    }
+
+    .main-buttons-item :hover {
+      color: blue !important;
+    }
+
+    @media(min-width:1200px) and (max-width:1600px) {
+      .EditUnCustomizationTaskDetailWidthClass {
+        flex: 0 0 29.666667%;
+        max-width: 29.666667%;
+      }
+    }
+
+    .k-tabstrip-top>.k-tabstrip-items .k-item.k-state-active {
+      background: #2ca01c !important;
+      color: white !important;
+    }
+
+    .cell-wrap-text {
+      white-space: normal !important;
+    }
+
+    .k-dropdown .k-state-focused {
+      box-shadow: 0 0 0 2px rgba(149, 186, 225, 0.76) !important;
+    }
+
+    .k-button:focus {
+      border: 2px solid #80bdff !important;
+    }
+
+    .task-detail-description p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .ag-header-cell-label {
+      justify-content: center !important;
+    }
+
+    .feed-com-text-inner-inner p {
+      margin-bottom: 0px;
+    }
+
+    .dropbtn {
+      background-color: white !important;
+      color: black !important;
+      padding: 0px 8px;
+      font-size: 20px !important;
+      border: none;
+      vertical-align: top;
+    }
+
+    .dropbtn {
+      border-radius: 4px;
+    }
+
+    .ql-snow .ql-editor img {
+      max-width: 80% !important;
+    }
+    .icon-arrow-right:before {
+      content: "\ea34";
+    }
+
+    @media(max-width:700px) {
+      .k-tabstrip-items .k-link {
+        font-size: 15px;
+      }
+    }
+
+    .ag-theme-balham .ag-cell {
+      border-left: 1px solid #ccc !important;
+    }
+
+    .ag-theme-balham .ag-row {
+      min-height: 32px !important;
+    }
+    .ag-theme-balham .ag-row:not(.ag-row-first){
+    border-width: 1px 1px 1px !important;
+}
+  </style>
+
+</head>
+<body style="background: #193048" class="show-left-rail">
+
+  <div class="busyLoading BusyLoadingHeightClass" id="divRowAjaxBusyIndicator">
+    <div style="top:30%;left:47%;position:fixed;">
+      <img alt="Loading Please Wait.." src="assets/images/busyicon.gif" />
+    </div>
+  </div>
+  <app-root></app-root>
+</body>
+
+</html>
